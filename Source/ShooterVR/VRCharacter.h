@@ -26,4 +26,15 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private: 
+	//Private functions
+	void MoveForward(float throttle);
+	void MoveRight(float throttle);
+
+private:
+	//Private Components
+
+	UPROPERTY(VisibleAnywhere)
+	class UCameraComponent* Camera;
+
 };
