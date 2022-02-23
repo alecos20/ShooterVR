@@ -28,6 +28,7 @@ public:
 
 private: 
 	//Private functions
+	void UpdateTeleportMarker();
 	void MoveForward(float throttle);
 	void MoveRight(float throttle);
 
@@ -36,5 +37,15 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	class UCameraComponent* Camera;
+
+	UPROPERTY(VisibleAnywhere)
+	class USceneComponent * VRRoot;
+
+	UPROPERTY(VisibleAnywhere)
+	class UStaticMeshComponent* TeleportMarker;
+private:
+	//Editable Components
+	UPROPERTY(EditAnywhere)
+	float MaxTeleport = 1000;
 
 };
