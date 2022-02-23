@@ -28,9 +28,13 @@ public:
 
 private: 
 	//Private functions
+	bool FindTeleportDestination(FVector &OutLocation);
 	void UpdateTeleportMarker();
 	void MoveForward(float throttle);
 	void MoveRight(float throttle);
+	void BeginTeleport();
+	void FinishTeleport();
+	void StartFade(float fromAlpha, float toAlpha);
 
 private:
 	//Private Components
@@ -47,5 +51,11 @@ private:
 	//Editable Components
 	UPROPERTY(EditAnywhere)
 	float MaxTeleport = 1000;
+
+	UPROPERTY(EditAnywhere)
+	float TeleportFadeTime = 0.5;
+
+	UPROPERTY(EditAnywhere)
+	FVector TeleportProjectionExtent = FVector(100, 100, 100);
 
 };
